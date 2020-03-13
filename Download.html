@@ -26,7 +26,7 @@
         ViewType: 4
     }
 };
-      $.ajax({
+      /* $.ajax({
              type: "POST",
              url: "https://smarketingcalendar.deloitte.com/api/mc/ReportPDF/",
              data: JSON.stringify(data),// now data come in this function
@@ -43,7 +43,7 @@
                  console.log(jqXHR);
                  alert('fail' + status.code);
              }
-          });
+          }); */
           function download(filename, text) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -69,7 +69,7 @@ document.getElementById("dwn-btn").addEventListener("click", function(){
 
   </head>
   <body>
-      <p>You are in download</p>
+      <p>You are in download. Updatd </p>
       <textarea id="text-val" rows="4">This is the content of my file</textarea><br/>
 <input type="button" id="dwn-btn" value="Download dinamically generated text file"/>
   </body>
