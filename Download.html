@@ -1,8 +1,53 @@
 <html>
   <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+      var data = {
+    ReportType: 0,
+    Filters: {
+        PageNumber: 1,
+        PageSize: 16,
+        SearchTerm: "",
+        RegionIds: [],
+        LocationIds: [],
+        ActivityTypeIds: [],
+        ActivityIds: [],
+        IssueIds: [],
+        ThemeIds: [],
+        IndustryIds: [],
+        ServiceIds: [],
+        JobFunctionIds: [],
+        JobLevelIds: [],
+        JobLevelSubCategoryIds: [],
+        IsFeaturedActivitySearch: false,
+        StartDate: "",
+        EndDate: "",
+        FromPages: "Upcoming activities",
+        ViewType: 4
+    }
+};
+      $.ajax({
+             type: "POST",
+             url: "https://smarketingcalendar.deloitte.com/api/mc/ReportPDF/",
+             data: JSON.stringify(data),// now data come in this function
+             contentType: "application/json; charset=utf-8",
+             crossDomain: true,
+             dataType: "json",
+             success: function (data, status, jqXHR) {
+
+                 alert("success");// write success in " "
+             },
+
+             error: function (jqXHR, status) {
+                 // error handler
+                 console.log(jqXHR);
+                 alert('fail' + status.code);
+             }
+          });
+  </script>
+
   </head>
   <body>
-      <p>You are in download</p>
+      <p>You are in download. Added Code</p>
   </body>
 </html>
